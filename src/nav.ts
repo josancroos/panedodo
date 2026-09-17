@@ -1,12 +1,13 @@
 import { experiments } from "./experiments";
 import { initCursor } from "./cursor";
+import "./platform.css";
 
 export function renderNav(base: string, currentSlug?: string) {
   const nav = document.createElement("nav");
-  nav.className = "site-nav";
+  nav.className = "pf-nav";
   nav.innerHTML = `
-    <a class="brand" href="${base}index.html" data-cursor-text="Home">panedodo / lab</a>
-    <select id="experiment-jump">
+    <a class="pf-brand" href="${base}index.html" data-cursor-text="Home">panedodo / lab</a>
+    <select id="experiment-jump" class="pf-select">
       <option value="">jump to experiment...</option>
       ${experiments
         .map(

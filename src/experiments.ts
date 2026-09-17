@@ -20,4 +20,9 @@ export const experiments: Experiment[] = [
     title: "Flow Type",
     tags: ["p5.js", "flow field", "particles", "type"],
   },
+  {
+    slug: "dough-knead",
+    title: "Dough Knead",
+    tags: ["matter.js", "softbody", "goo", "tweakpane"],
+  },
 ];

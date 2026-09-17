@@ -1,0 +1,49 @@
+.experiment {
+  background: var(--dough-bg, #6e6ec4);
+  transition: background 0.2s ease;
+}
+
+#dough-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  filter: url(#goo);
+}
+
+.panel-host {
+  position: fixed;
+  top: 5rem;
+  right: 1.5rem;
+  z-index: 50;
+  width: 260px;
+  max-height: calc(100vh - 6.5rem);
+  overflow-y: auto;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+.panel-host .tp-dfwv {
+  --tp-base-background-color: #101014;
+  --tp-base-shadow-color: transparent;
+  --tp-button-background-color: #232227;
+  --tp-button-background-color-active: #ff4d2e;
+  --tp-button-background-color-focus: #2c2b31;
+  --tp-button-background-color-hover: #2c2b31;
+  --tp-button-foreground-color: #f4f3ef;
+  --tp-container-background-color: #101014;
+  --tp-container-background-color-active: #17171b;
+  --tp-container-background-color-focus: #17171b;
+  --tp-container-background-color-hover: #141317;
+  --tp-container-foreground-color: #f4f3ef;
+  --tp-groove-foreground-color: #232227;
+  --tp-input-background-color: #17171b;
+  --tp-input-background-color-active: #1e1d22;
+  --tp-input-background-color-focus: #1e1d22;
+  --tp-input-background-color-hover: #1a191e;
+  --tp-input-foreground-color: #f4f3ef;
+  --tp-label-foreground-color: #8a8891;
+  --tp-monitor-background-color: #17171b;
+  --tp-monitor-foreground-color: #ff4d2e;
+  width: 100%;
+  position: static;
+}

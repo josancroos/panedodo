@@ -13,7 +13,7 @@ const params = {
   dotSize: 6,
   ringSize: 40,
   ringHoverSize: 56,
-  dotColor: "#ff4d2e",
+  dotColor: "#f4f3ef",
   ringColor: "#f4f3ef",
 };
 

@@ -13,7 +13,7 @@
   font-size: 0.75rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  color: var(--accent);
+  color: var(--muted);
   margin-bottom: 1.5rem;
 }
 
@@ -64,7 +64,7 @@
   font-family: var(--font-body);
   font-size: 0.9rem;
   color: var(--bg);
-  background: var(--dough);
+  background: var(--fg);
   border: none;
   padding: 1rem 2rem;
   border-radius: 999px;
@@ -84,7 +84,7 @@
   --tp-base-background-color: #101014;
   --tp-base-shadow-color: transparent;
   --tp-button-background-color: #232227;
-  --tp-button-background-color-active: #ff4d2e;
+  --tp-button-background-color-active: #4a4950;
   --tp-button-background-color-focus: #2c2b31;
   --tp-button-background-color-hover: #2c2b31;
   --tp-button-foreground-color: #f4f3ef;
@@ -101,7 +101,7 @@
   --tp-input-foreground-color: #f4f3ef;
   --tp-label-foreground-color: #8a8891;
   --tp-monitor-background-color: #17171b;
-  --tp-monitor-foreground-color: #ff4d2e;
+  --tp-monitor-foreground-color: #f4f3ef;
   width: 100%;
   position: static;
 }

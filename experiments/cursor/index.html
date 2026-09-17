@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cursor — panedodo / lab</title>
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/experiments/cursor/cursor-demo.css" />
+  </head>
+  <body>
+    <main class="cd-stage">
+      <span class="cd-eyebrow">03 — micro-interaction</span>
+      <h1 class="cd-title">Der Cursor ist Teil der Marke.</h1>
+      <p class="cd-text">
+        Läuft site-weit im Lab. Hover auf Links zeigt Label-Text, Buttons unten sind magnetisch —
+        ziehen den Cursor sanft an. Rechts kannst du Grösse und Farbe live tunen.
+      </p>
+
+      <div class="cd-row">
+        <a href="/index.html" data-cursor-text="Home">Standard-Link</a>
+        <span class="cd-dot-sep"></span>
+        <a href="#" data-cursor-text="Bestellen">Mit Label</a>
+      </div>
+
+      <div class="cd-magnets">
+        <button class="cd-magnet" data-magnetic data-magnetic-strength="0.4" data-cursor-text="Klick">
+          Magnetisch
+        </button>
+        <button class="cd-magnet" data-magnetic data-magnetic-strength="0.6" data-cursor-text="Wow">
+          Stärker
+        </button>
+      </div>
+    </main>
+
+    <div id="panel-host" class="panel-host"></div>
+
+    <script type="module" src="/experiments/cursor/main.ts"></script>
+  </body>
+</html>

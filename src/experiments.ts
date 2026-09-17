@@ -25,4 +25,29 @@ export const experiments: Experiment[] = [
     title: "Dough Knead",
     tags: ["matter.js", "softbody", "goo", "tweakpane"],
   },
+  {
+    slug: "hero-type",
+    title: "Hero Type",
+    tags: ["typography", "gsap", "scale", "scroll"],
+  },
+  {
+    slug: "loading-screen",
+    title: "Loading Screen",
+    tags: ["gsap", "choreography", "intro"],
+  },
+  {
+    slug: "scroll-sections",
+    title: "Scroll Sections",
+    tags: ["lenis", "gsap", "scrolltrigger", "parallax"],
+  },
+  {
+    slug: "page-transition",
+    title: "Page Transition",
+    tags: ["gsap", "transition", "wipe"],
+  },
+  {
+    slug: "cursor",
+    title: "Cursor",
+    tags: ["interaction", "magnetic", "craft"],
+  },
 ];

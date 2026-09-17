@@ -8,7 +8,7 @@ const grid = document.getElementById("grid")!;
 grid.innerHTML = experiments
   .map(
     (e, i) => `
-    <a class="card" href="/experiments/${e.slug}/index.html">
+    <a class="card" href="/experiments/${e.slug}/index.html" data-cursor-text="View">
       <span class="index">${String(i + 1).padStart(2, "0")}</span>
       <span class="title">${e.title}</span>
       <span class="tags">${e.tags.join(" · ")}</span>

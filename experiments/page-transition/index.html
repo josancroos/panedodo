@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page Transition — panedodo / lab</title>
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/experiments/page-transition/transition.css" />
+  </head>
+  <body>
+    <div class="pt-overlay" id="pt-overlay"></div>
+
+    <nav class="pt-tabs">
+      <button class="pt-tab is-active" data-view="home" data-magnetic>Home</button>
+      <button class="pt-tab" data-view="work" data-magnetic>Work</button>
+    </nav>
+
+    <main class="pt-stage">
+      <section class="pt-view" data-view="home">
+        <span class="pt-eyebrow">panedodo</span>
+        <h1 class="pt-title">Handwerk,<br />jeden Tag neu.</h1>
+        <p class="pt-text">Eine Bäckerei, die sich neu erfindet — ohne ihre Wurzeln zu verlieren.</p>
+      </section>
+
+      <section class="pt-view" data-view="work" hidden>
+        <span class="pt-eyebrow">sortiment</span>
+        <div class="pt-cards">
+          <div class="pt-card"><span>01</span>Ruchbrot</div>
+          <div class="pt-card"><span>02</span>Zopf</div>
+          <div class="pt-card"><span>03</span>Gipfeli</div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/experiments/page-transition/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+.cd-stage {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 1.5rem 3rem;
+  max-width: 900px;
+}
+
+.cd-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+}
+
+.cd-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.5rem;
+  max-width: 14ch;
+}
+
+.cd-text {
+  color: var(--muted);
+  max-width: 50ch;
+  line-height: 1.6;
+  margin-bottom: 3rem;
+}
+
+.cd-row {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 3rem;
+  font-size: 1.1rem;
+}
+
+.cd-row a {
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2px;
+}
+
+.cd-dot-sep {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--muted-2);
+}
+
+.cd-magnets {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.cd-magnet {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--bg);
+  background: var(--dough);
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.panel-host {
+  position: fixed;
+  top: 5rem;
+  right: 1.5rem;
+  z-index: 50;
+  width: 260px;
+  font-family: var(--font-body);
+}
+
+.panel-host .tp-dfwv {
+  --tp-base-background-color: #101014;
+  --tp-base-shadow-color: transparent;
+  --tp-button-background-color: #232227;
+  --tp-button-background-color-active: #ff4d2e;
+  --tp-button-background-color-focus: #2c2b31;
+  --tp-button-background-color-hover: #2c2b31;
+  --tp-button-foreground-color: #f4f3ef;
+  --tp-container-background-color: #101014;
+  --tp-container-background-color-active: #17171b;
+  --tp-container-background-color-focus: #17171b;
+  --tp-container-background-color-hover: #141317;
+  --tp-container-foreground-color: #f4f3ef;
+  --tp-groove-foreground-color: #232227;
+  --tp-input-background-color: #17171b;
+  --tp-input-background-color-active: #1e1d22;
+  --tp-input-background-color-focus: #1e1d22;
+  --tp-input-background-color-hover: #1a191e;
+  --tp-input-foreground-color: #f4f3ef;
+  --tp-label-foreground-color: #8a8891;
+  --tp-monitor-background-color: #17171b;
+  --tp-monitor-foreground-color: #ff4d2e;
+  width: 100%;
+  position: static;
+}

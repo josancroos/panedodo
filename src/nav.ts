@@ -1,10 +1,11 @@
 import { experiments } from "./experiments";
+import { initCursor } from "./cursor";
 
 export function renderNav(base: string, currentSlug?: string) {
   const nav = document.createElement("nav");
   nav.className = "site-nav";
   nav.innerHTML = `
-    <a class="brand" href="${base}index.html">panedodo / lab</a>
+    <a class="brand" href="${base}index.html" data-cursor-text="Home">panedodo / lab</a>
     <select id="experiment-jump">
       <option value="">jump to experiment...</option>
       ${experiments
@@ -23,4 +24,6 @@ export function renderNav(base: string, currentSlug?: string) {
   select.addEventListener("change", () => {
     if (select.value) window.location.href = select.value;
   });
+
+  initCursor();
 }

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scroll Sections — panedodo / lab</title>
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/experiments/scroll-sections/scroll-sections.css" />
+  </head>
+  <body>
+    <section class="ss-hero">
+      <div class="ss-blob" data-speed="0.25"></div>
+      <span class="ss-eyebrow">panedodo — die reise eines brotes</span>
+      <h1 class="ss-headline">Vom Korn<br />zum Kanten.</h1>
+      <span class="ss-scroll-hint">scroll dich durch</span>
+    </section>
+
+    <section class="ss-statement">
+      <p class="ss-quote">
+        „Gutes Brot braucht Zeit — <span class="ss-accent">keine Abkürzung</span>, kein Ersatz.
+        Nur Mehl, Wasser, Salz und Geduld.“
+      </p>
+    </section>
+
+    <section class="ss-gallery">
+      <span class="ss-section-label">03 — sortiment</span>
+      <div class="ss-gallery-grid">
+        <article class="ss-gallery-card">
+          <div class="ss-gallery-bg" data-speed="0.15" style="--c: #e9d9b8"></div>
+          <span class="ss-gallery-title">Ruchbrot</span>
+        </article>
+        <article class="ss-gallery-card">
+          <div class="ss-gallery-bg" data-speed="0.3" style="--c: #d9b88f"></div>
+          <span class="ss-gallery-title">Zopf</span>
+        </article>
+        <article class="ss-gallery-card">
+          <div class="ss-gallery-bg" data-speed="0.2" style="--c: #c99a66"></div>
+          <span class="ss-gallery-title">Baguette</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="ss-process" id="ss-process">
+      <div class="ss-process-inner">
+        <span class="ss-section-label">04 — der prozess</span>
+        <div class="ss-steps">
+          <div class="ss-step" data-step="0">
+            <span class="ss-step-num">01</span>
+            <h2 class="ss-step-title">Mahlen</h2>
+            <p class="ss-step-text">Getreide wird schonend zu feinem Mehl vermahlen.</p>
+          </div>
+          <div class="ss-step" data-step="1">
+            <span class="ss-step-num">02</span>
+            <h2 class="ss-step-title">Kneten</h2>
+            <p class="ss-step-text">Von Hand geknetet, bis der Teig elastisch trägt.</p>
+          </div>
+          <div class="ss-step" data-step="2">
+            <span class="ss-step-num">03</span>
+            <h2 class="ss-step-title">Backen</h2>
+            <p class="ss-step-text">Bei hoher Hitze im Steinofen goldbraun gebacken.</p>
+          </div>
+        </div>
+        <div class="ss-dots">
+          <span class="ss-dot is-active"></span>
+          <span class="ss-dot"></span>
+          <span class="ss-dot"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="ss-stats">
+      <div class="ss-stat">
+        <span class="ss-stat-num" data-count="50">0</span>
+        <span class="ss-stat-label">Jahre Handwerk</span>
+      </div>
+      <div class="ss-stat">
+        <span class="ss-stat-num" data-count="12">0</span>
+        <span class="ss-stat-label">Brotsorten</span>
+      </div>
+      <div class="ss-stat">
+        <span class="ss-stat-num" data-count="1">0</span>
+        <span class="ss-stat-label">Familienbetrieb</span>
+      </div>
+    </section>
+
+    <section class="ss-close">
+      <h2 class="ss-close-title">Bereit für<br />frisches Brot?</h2>
+      <a class="ss-close-link" href="/index.html" data-cursor-text="Zurück">← zurück zum lab</a>
+    </section>
+
+    <script type="module" src="/experiments/scroll-sections/main.ts"></script>
+  </body>
+</html>

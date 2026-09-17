@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hero Type — panedodo / lab</title>
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/experiments/hero-type/hero-type.css" />
+  </head>
+  <body>
+    <main class="ht">
+      <section class="ht-hero" id="ht-hero">
+        <span class="ht-eyebrow">panedodo — teigwaren seit generationen</span>
+        <h1 class="ht-headline" id="ht-headline" aria-label="PANEDODO">
+          <span class="ht-line">PANE</span><span class="ht-line">DODO</span>
+        </h1>
+        <p class="ht-sub">kinetic type lab — für das panedodo.ch redesign</p>
+        <span class="ht-scroll-hint">scroll</span>
+      </section>
+
+      <section class="ht-specimen">
+        <span class="ht-section-label">01 — type scale</span>
+        <div class="ht-spec-row ht-spec-display">
+          <span class="ht-spec-sample">Aa Teig</span>
+          <span class="ht-spec-meta">Display · Fraunces 800 · clamp(4rem,10vw,9rem) · -0.04em</span>
+        </div>
+        <div class="ht-spec-row ht-spec-h1">
+          <span class="ht-spec-sample">Frisch gebacken</span>
+          <span class="ht-spec-meta">H1 · Fraunces 600 · 3.5rem · -0.02em</span>
+        </div>
+        <div class="ht-spec-row ht-spec-h2">
+          <span class="ht-spec-sample">Von Hand geknetet, täglich neu</span>
+          <span class="ht-spec-meta">H2 · Fraunces 500 · 1.75rem · -0.01em</span>
+        </div>
+        <div class="ht-spec-row ht-spec-body">
+          <span class="ht-spec-sample"
+            >Body text sits quietly beneath the display type — generous line-height, moderate
+            measure, built for reading.</span
+          >
+          <span class="ht-spec-meta">Body · Space Grotesk 400 · 1.05rem / 1.6</span>
+        </div>
+        <div class="ht-spec-row ht-spec-caption">
+          <span class="ht-spec-sample">Caption / Label / UI</span>
+          <span class="ht-spec-meta">Caption · Space Grotesk 500 · 0.75rem · 0.08em tracking</span>
+        </div>
+      </section>
+
+      <section class="ht-playground">
+        <span class="ht-section-label">02 — variable weight, follows your cursor</span>
+        <h2 class="ht-play-word" id="ht-play-word" aria-label="KNETEN">
+          <span>K</span><span>N</span><span>E</span><span>T</span><span>E</span><span>N</span>
+        </h2>
+      </section>
+    </main>
+    <script type="module" src="/experiments/hero-type/main.ts"></script>
+  </body>
+</html>

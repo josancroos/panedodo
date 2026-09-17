@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loading Screen — panedodo / lab</title>
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/experiments/loading-screen/loading.css" />
+  </head>
+  <body>
+    <div class="ls-loader" id="ls-loader">
+      <div class="ls-bars">
+        <div class="ls-bar"></div>
+        <div class="ls-bar"></div>
+        <div class="ls-bar"></div>
+        <div class="ls-bar"></div>
+        <div class="ls-bar"></div>
+        <div class="ls-bar"></div>
+      </div>
+      <div class="ls-content">
+        <span class="ls-word" id="ls-word">PANEDODO</span>
+        <div class="ls-meta">
+          <span class="ls-count" id="ls-count">00</span>
+          <div class="ls-bar-track"><div class="ls-bar-fill" id="ls-bar-fill"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <main class="ls-page">
+      <span class="ls-page-label">dahinter — die eigentliche seite</span>
+      <h1 class="ls-page-title">Frisch aus dem Ofen.</h1>
+      <p class="ls-page-sub">
+        Dieser Loader ist als eigenständige Sequenz gebaut — vor jedem echten Seiteninhalt
+        einsetzbar, ohne Abhängigkeit vom Rest der Page.
+      </p>
+      <button class="ls-replay" id="ls-replay" data-magnetic data-cursor-text="Replay">
+        Replay
+      </button>
+    </main>
+
+    <script type="module" src="/experiments/loading-screen/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,164 @@
+.ht {
+  background: var(--bg);
+}
+
+.ht-hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ht-eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 1.5rem;
+}
+
+.ht-headline {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(4.5rem, 15vw, 13rem);
+  line-height: 0.82;
+  letter-spacing: -0.045em;
+  color: var(--fg);
+}
+
+.ht-headline .ht-line {
+  display: block;
+  overflow: hidden;
+}
+
+.ht-headline .ht-line > span {
+  display: inline-block;
+}
+
+.ht-sub {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-top: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+.ht-scroll-hint {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted-2);
+}
+
+.ht-section-label {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 3rem;
+}
+
+.ht-specimen {
+  padding: 8rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.ht-spec-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.ht-spec-row:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+.ht-spec-sample {
+  font-family: var(--font-display);
+  color: var(--fg);
+  flex: 1;
+  min-width: 260px;
+}
+
+.ht-spec-meta {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--muted-2);
+  white-space: nowrap;
+}
+
+.ht-spec-display .ht-spec-sample {
+  font-weight: 800;
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  letter-spacing: -0.04em;
+}
+
+.ht-spec-h1 .ht-spec-sample {
+  font-weight: 600;
+  font-size: 2.75rem;
+  letter-spacing: -0.02em;
+}
+
+.ht-spec-h2 .ht-spec-sample {
+  font-weight: 500;
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+}
+
+.ht-spec-body .ht-spec-sample {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.6;
+  max-width: 50ch;
+}
+
+.ht-spec-caption .ht-spec-sample {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.ht-playground {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 1.5rem 8rem;
+}
+
+.ht-play-word {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 13vw, 9rem);
+  letter-spacing: -0.02em;
+  color: var(--dough);
+  font-variation-settings: "wght" 300;
+}
+
+.ht-play-word span {
+  display: inline-block;
+  font-variation-settings: inherit;
+  transition: font-variation-settings 0.15s var(--ease-quart-out);
+}

@@ -2,6 +2,10 @@ export interface Experiment {
   slug: string;
   title: string;
   tags: string[];
+  preview?: {
+    type: "image" | "video";
+    src: string;
+  };
 }
 
 export const experiments: Experiment[] = [

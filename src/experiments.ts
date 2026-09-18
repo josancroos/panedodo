@@ -54,4 +54,9 @@ export const experiments: Experiment[] = [
     title: "Cursor",
     tags: ["interaction", "magnetic", "craft"],
   },
+  {
+    slug: "typeface",
+    title: "Typeface",
+    tags: ["typography", "variable font", "specimen"],
+  },
 ];

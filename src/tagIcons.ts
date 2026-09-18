@@ -12,4 +12,5 @@ export const tagIcons: Record<string, string> = {
   ),
   lenis: stroke('<path d="M2 12c2-4 4-4 6 0s4 4 6 0 4-4 6 0"/>'),
   shader: stroke('<path d="M12 2 13.8 8.2 20 10 13.8 11.8 12 18 10.2 11.8 4 10 10.2 8.2Z"/>'),
+  typography: stroke('<path d="M4 6h16"/><path d="M12 6v14"/><path d="M9 20h6"/>'),
 };

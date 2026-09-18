@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Typeface — panedodo / lab</title>
+    <link rel="stylesheet" href="/src/style.css" />
+    <link rel="stylesheet" href="/experiments/typeface/typeface.css" />
+  </head>
+  <body>
+    <main class="tf">
+      <span class="tf-eyebrow">10 — type tester · panedodo Display</span>
+
+      <div class="tf-stage" id="tf-stage" data-case="as-typed">
+        <div
+          class="tf-specimen"
+          id="tf-specimen"
+          contenteditable="true"
+          spellcheck="false"
+          data-placeholder="panedodo"
+        >
+          panedodo
+        </div>
+      </div>
+
+      <div class="tf-dock">
+        <div class="tf-dock-group">
+          <span class="tf-dock-label">Weight</span>
+          <div class="tf-seg" id="tf-weight-seg">
+            <button type="button" data-weight="600">SemiBold</button>
+            <button type="button" data-weight="700">Bold</button>
+            <button type="button" data-weight="800" class="is-active">ExtraBold</button>
+            <button type="button" data-weight="900">Black</button>
+          </div>
+          <input type="range" id="tf-weight-slider" min="600" max="900" step="1" value="800" />
+          <span class="tf-dock-value" id="tf-weight-value">800</span>
+        </div>
+
+        <div class="tf-dock-group">
+          <span class="tf-dock-label">Size</span>
+          <button type="button" class="tf-fit-toggle is-active" id="tf-fit-toggle">Fit</button>
+          <input type="range" id="tf-size-slider" min="24" max="260" step="1" value="120" />
+          <span class="tf-dock-value" id="tf-size-value">120px</span>
+        </div>
+
+        <div class="tf-dock-group">
+          <span class="tf-dock-label">Tracking</span>
+          <input type="range" id="tf-tracking-slider" min="-0.05" max="0.3" step="0.005" value="-0.01" />
+          <span class="tf-dock-value" id="tf-tracking-value">-0.01em</span>
+        </div>
+
+        <div class="tf-dock-group">
+          <span class="tf-dock-label">Case</span>
+          <div class="tf-seg" id="tf-case-seg">
+            <button type="button" data-case="as-typed" class="is-active">Aa</button>
+            <button type="button" data-case="upper">AA</button>
+            <button type="button" data-case="lower">aa</button>
+          </div>
+        </div>
+
+        <div class="tf-dock-spacer"></div>
+
+        <button type="button" class="tf-fit-toggle" id="tf-invert-toggle">Invert</button>
+        <button type="button" class="tf-fit-toggle" id="tf-reset-toggle">Reset</button>
+      </div>
+
+      <div class="tf-waterfall" id="tf-waterfall"></div>
+
+      <div class="tf-charset">
+        <span class="tf-charset-meta">Großbuchstaben</span>
+        <div class="tf-charset-row">ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
+        <span class="tf-charset-meta">Kleinbuchstaben</span>
+        <div class="tf-charset-row">abcdefghijklmnopqrstuvwxyz</div>
+        <span class="tf-charset-meta">Umlaute &amp; ß</span>
+        <div class="tf-charset-row">ÄÖÜ äöü ß ẞ</div>
+        <span class="tf-charset-meta">Zahlen &amp; Satzzeichen</span>
+        <div class="tf-charset-row">0123456789 .,:;!?—</div>
+      </div>
+
+      <div class="tf-section">
+        <span class="tf-section-title">Absatz-Test</span>
+        <p
+          class="tf-paragraph"
+          id="tf-paragraph"
+          contenteditable="true"
+          spellcheck="false"
+        >
+          Der Cursor ist Teil der Marke. Panedodo backt seit Generationen frische Teigwaren von
+          Hand — von Hand geknetet, täglich neu. Dieser Absatz zeigt, wie sich panedodo Display
+          im Fliesstext liest, bei kleineren Graden und im leichtesten verfügbaren Schnitt.
+        </p>
+        <div class="tf-dock-group tf-paragraph-controls">
+          <span class="tf-dock-label">Size</span>
+          <input type="range" id="tf-paragraph-size" min="14" max="40" step="1" value="22" />
+          <span class="tf-dock-value" id="tf-paragraph-size-value">22px</span>
+        </div>
+      </div>
+
+      <div class="tf-section tf-glyphs-section">
+        <span class="tf-section-title">Vollständiger Zeichensatz</span>
+        <div class="tf-glyphs-wrap">
+          <div class="tf-glyphs" id="tf-glyphs"></div>
+          <div class="tf-glyph-preview" id="tf-glyph-preview">Aa</div>
+        </div>
+      </div>
+    </main>
+    <script type="module" src="/experiments/typeface/main.ts"></script>
+  </body>
+</html>

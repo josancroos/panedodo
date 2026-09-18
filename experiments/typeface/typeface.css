@@ -1,0 +1,341 @@
+@font-face {
+  font-family: "panedodo Display";
+  src: url("/fonts/panedodo-display-variable.woff2") format("woff2-variations");
+  font-weight: 600 900;
+  font-display: swap;
+}
+
+.tf {
+  min-height: 100vh;
+  padding-top: 5.5rem;
+  color: var(--pf-fg);
+}
+
+.tf-eyebrow {
+  display: block;
+  color: var(--pf-muted);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ---- stage: full-bleed editable specimen ---- */
+
+.tf-stage {
+  position: relative;
+  min-height: 46vh;
+  display: flex;
+  align-items: center;
+  padding: 2rem 1.5rem;
+  background: var(--tf-stage-bg, var(--pf-bg));
+  color: var(--tf-stage-fg, var(--pf-fg));
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.tf-stage.is-inverted {
+  --tf-stage-bg: var(--pf-fg);
+  --tf-stage-fg: var(--pf-bg);
+}
+
+.tf-specimen {
+  font-family: "panedodo Display", var(--font-display);
+  font-variation-settings: "wght" 800;
+  line-height: 0.95;
+  width: 100%;
+  outline: none;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.tf-stage[data-case="upper"] .tf-specimen {
+  text-transform: uppercase;
+}
+.tf-stage[data-case="lower"] .tf-specimen {
+  text-transform: lowercase;
+}
+
+.tf-specimen:empty::before {
+  content: attr(data-placeholder);
+  color: var(--pf-muted);
+  opacity: 0.6;
+}
+
+/* ---- floating control dock ---- */
+
+.tf-dock {
+  position: sticky;
+  top: var(--pf-nav-height, 57px);
+  z-index: 80;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.9rem 1.5rem;
+  background: color-mix(in srgb, var(--pf-bg) 88%, transparent);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid var(--pf-border);
+  border-bottom: 1px solid var(--pf-border);
+}
+
+.tf-dock-group {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.tf-dock-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--pf-muted);
+  white-space: nowrap;
+}
+
+.tf-dock-value {
+  font-size: 0.65rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--pf-muted);
+  min-width: 2.4em;
+}
+
+.tf-dock input[type="range"] {
+  width: 110px;
+  accent-color: var(--pf-fg);
+}
+
+.tf-seg {
+  display: flex;
+  border: 1px solid var(--pf-border);
+}
+
+.tf-seg button {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--pf-muted);
+  background: transparent;
+  border: none;
+  border-right: 1px solid var(--pf-border);
+  padding: 0.35rem 0.6rem;
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    background-color 0.15s ease;
+}
+
+.tf-seg button:last-child {
+  border-right: none;
+}
+
+.tf-seg button:hover {
+  color: var(--pf-fg);
+}
+
+.tf-seg button.is-active {
+  color: var(--pf-bg);
+  background: var(--pf-fg);
+}
+
+.tf-dock-spacer {
+  flex: 1;
+}
+
+.tf-fit-toggle {
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--pf-muted);
+  background: transparent;
+  border: 1px solid var(--pf-border);
+  padding: 0.35rem 0.6rem;
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.tf-fit-toggle.is-active {
+  color: var(--pf-fg);
+  border-color: var(--pf-fg);
+}
+
+/* ---- waterfall ---- */
+
+.tf-waterfall {
+  padding: 0 1.5rem;
+  margin-top: 3rem;
+}
+
+.tf-waterfall-row {
+  display: flex;
+  align-items: baseline;
+  gap: 1.25rem;
+  padding: 0.9rem 0;
+  border-top: 1px solid var(--pf-border);
+  overflow: hidden;
+}
+
+.tf-waterfall-row:last-child {
+  border-bottom: 1px solid var(--pf-border);
+}
+
+.tf-waterfall-size {
+  flex-shrink: 0;
+  width: 3.5rem;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  color: var(--pf-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.tf-waterfall-text {
+  font-family: "panedodo Display", var(--font-display);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+}
+
+.tf-waterfall[data-case="upper"] .tf-waterfall-text {
+  text-transform: uppercase;
+}
+.tf-waterfall[data-case="lower"] .tf-waterfall-text {
+  text-transform: lowercase;
+}
+
+/* ---- charset ---- */
+
+.tf-charset {
+  padding: 0 1.5rem 6rem;
+  margin-top: 3.5rem;
+  max-width: 1100px;
+}
+
+.tf-charset-row {
+  font-family: "panedodo Display", var(--font-display);
+  font-variation-settings: "wght" 800;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  letter-spacing: 0.01em;
+  padding: 1.25rem 0;
+  border-top: 1px solid var(--pf-border);
+  word-break: break-all;
+}
+
+.tf-charset-row:last-child {
+  border-bottom: 1px solid var(--pf-border);
+}
+
+.tf-charset-meta {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--pf-muted);
+  margin-bottom: 0.5rem;
+}
+
+/* ---- generic section ---- */
+
+.tf-section {
+  padding: 0 1.5rem 6rem;
+  max-width: 1100px;
+}
+
+.tf-section-title {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--pf-muted);
+  margin-bottom: 1.5rem;
+}
+
+/* ---- paragraph test ---- */
+
+.tf-paragraph {
+  font-family: "panedodo Display", var(--font-display);
+  font-variation-settings: "wght" 600;
+  font-size: 22px;
+  line-height: 1.5;
+  letter-spacing: 0.002em;
+  max-width: 70ch;
+  outline: none;
+  margin: 0 0 1.5rem;
+}
+
+.tf-paragraph-controls {
+  padding-top: 1rem;
+  border-top: 1px solid var(--pf-border);
+}
+
+/* ---- full glyph grid ---- */
+
+.tf-glyphs-section {
+  max-width: none;
+}
+
+.tf-glyphs-wrap {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.tf-glyphs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(52px, 1fr));
+  gap: 1px;
+  background: var(--pf-border);
+  border: 1px solid var(--pf-border);
+  flex: 3;
+}
+
+.tf-glyph {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--pf-bg);
+  font-family: "panedodo Display", var(--font-display);
+  font-variation-settings: "wght" 800;
+  font-size: 1.3rem;
+  color: var(--pf-fg);
+  cursor: default;
+  transition: background-color 0.1s ease;
+}
+
+.tf-glyph:hover {
+  background: color-mix(in srgb, var(--pf-fg) 8%, var(--pf-bg));
+}
+
+.tf-glyph-preview {
+  flex: 2;
+  min-width: 260px;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--pf-border);
+  font-family: "panedodo Display", var(--font-display);
+  font-variation-settings: "wght" 800;
+  font-size: 12rem;
+  line-height: 1;
+  color: var(--pf-fg);
+}
+
+@media (max-width: 900px) {
+  .tf-glyphs-wrap {
+    flex-direction: column;
+  }
+
+  .tf-glyph-preview {
+    width: 100%;
+    min-height: 220px;
+  }
+}

@@ -152,10 +152,35 @@
   box-shadow:
     0 8px 20px -16px var(--pf-shadow),
     0 2px 6px -3px var(--pf-shadow);
+  cursor: grab;
   transition:
     background 0.15s ease,
     transform 0.2s var(--ease-quart-out, ease),
-    box-shadow 0.2s var(--ease-quart-out, ease);
+    box-shadow 0.2s var(--ease-quart-out, ease),
+    opacity 0.15s ease;
+}
+
+.pf-card.is-dragging {
+  opacity: 0.4;
+  cursor: grabbing;
+}
+
+@keyframes pf-wiggle {
+  0%,
+  100% {
+    transform: rotate(-0.6deg);
+  }
+  50% {
+    transform: rotate(0.6deg);
+  }
+}
+
+.pf-grid.is-reordering .pf-card:not(.is-dragging) {
+  animation: pf-wiggle 0.22s ease-in-out infinite;
+}
+
+.pf-grid.is-reordering .pf-card:nth-child(even):not(.is-dragging) {
+  animation-delay: -0.11s;
 }
 
 .pf-card:hover {
@@ -196,12 +221,6 @@
   flex-direction: column;
   gap: 0.35rem;
   padding: 0 0.5rem 0.5rem;
-}
-
-.pf-card .pf-index-num {
-  color: var(--pf-muted);
-  font-size: 0.7rem;
-  font-variant-numeric: tabular-nums;
 }
 
 .pf-card .pf-title {

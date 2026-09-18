@@ -1,4 +1,4 @@
-import { experiments } from "./experiments";
+import { getOrderedExperiments } from "./experiments";
 import { initCursor } from "./cursor";
 import "./platform.css";
 
@@ -51,7 +51,7 @@ export function renderNav(base: string, currentSlug?: string) {
   sidebar.className = "pf-sidebar";
   sidebar.innerHTML = `
     <a class="pf-sidebar-item${currentSlug ? "" : " is-current"}" href="${base}index.html">Home</a>
-    ${experiments
+    ${getOrderedExperiments()
       .map(
         (e) =>
           `<a class="pf-sidebar-item${e.slug === currentSlug ? " is-current" : ""}" href="${base}experiments/${e.slug}/index.html">${e.title}</a>`

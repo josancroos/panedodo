@@ -60,3 +60,23 @@ export const experiments: Experiment[] = [
     tags: ["typography", "variable font", "specimen"],
   },
 ];
+
+const ORDER_KEY = "panedodo-card-order";
+
+export function getOrderedExperiments(): Experiment[] {
+  const stored = localStorage.getItem(ORDER_KEY);
+  if (!stored) return experiments;
+  try {
+    const order: string[] = JSON.parse(stored);
+    const bySlug = new Map(experiments.map((e) => [e.slug, e]));
+    const ordered = order.map((slug) => bySlug.get(slug)).filter((e): e is Experiment => !!e);
+    const remaining = experiments.filter((e) => !order.includes(e.slug));
+    return [...ordered, ...remaining];
+  } catch {
+    return experiments;
+  }
+}
+
+export function saveExperimentOrder(slugs: string[]) {
+  localStorage.setItem(ORDER_KEY, JSON.stringify(slugs));
+}

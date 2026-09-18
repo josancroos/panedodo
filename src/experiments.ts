@@ -10,24 +10,14 @@ export interface Experiment {
 
 export const experiments: Experiment[] = [
   {
-    slug: "type-gravity",
-    title: "Type Gravity",
-    tags: ["matter.js", "physics", "type"],
+    slug: "typeface",
+    title: "Typeface",
+    tags: ["typography", "variable font", "specimen"],
   },
   {
-    slug: "webgl-distort",
-    title: "WebGL Distort",
-    tags: ["three.js", "webgl", "shader", "type"],
-  },
-  {
-    slug: "flow-type",
-    title: "Flow Type",
-    tags: ["p5.js", "flow field", "particles", "type"],
-  },
-  {
-    slug: "dough-knead",
-    title: "Dough Knead",
-    tags: ["matter.js", "softbody", "goo", "tweakpane"],
+    slug: "scroll-sections",
+    title: "Scroll Sections",
+    tags: ["lenis", "gsap", "scrolltrigger", "parallax"],
   },
   {
     slug: "hero-type",
@@ -40,9 +30,9 @@ export const experiments: Experiment[] = [
     tags: ["gsap", "choreography", "intro"],
   },
   {
-    slug: "scroll-sections",
-    title: "Scroll Sections",
-    tags: ["lenis", "gsap", "scrolltrigger", "parallax"],
+    slug: "cursor",
+    title: "Cursor",
+    tags: ["interaction", "magnetic", "craft"],
   },
   {
     slug: "page-transition",
@@ -50,14 +40,24 @@ export const experiments: Experiment[] = [
     tags: ["gsap", "transition", "wipe"],
   },
   {
-    slug: "cursor",
-    title: "Cursor",
-    tags: ["interaction", "magnetic", "craft"],
+    slug: "dough-knead",
+    title: "Dough Knead",
+    tags: ["matter.js", "softbody", "goo", "tweakpane"],
   },
   {
-    slug: "typeface",
-    title: "Typeface",
-    tags: ["typography", "variable font", "specimen"],
+    slug: "type-gravity",
+    title: "Type Gravity",
+    tags: ["matter.js", "physics", "type"],
+  },
+  {
+    slug: "flow-type",
+    title: "Flow Type",
+    tags: ["p5.js", "flow field", "particles", "type"],
+  },
+  {
+    slug: "webgl-distort",
+    title: "WebGL Distort",
+    tags: ["three.js", "webgl", "shader", "type"],
   },
 ];
 

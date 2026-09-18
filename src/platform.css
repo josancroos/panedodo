@@ -3,7 +3,7 @@
    experiment can diverge freely without the shell fighting it. */
 
 :root {
-  --pf-bg: #0a0a0a;
+  --pf-bg: #242424;
   --pf-fg: #e8e8e6;
   --pf-muted: #7a7a7a;
   --pf-border: #1e1e1e;
@@ -32,7 +32,7 @@ body.pf-page .pf-nav {
   justify-content: space-between;
   padding: 1rem 1.5rem;
   border-bottom: 1px solid var(--pf-border);
-  background: rgba(10, 10, 10, 0.8);
+  background: rgba(36, 36, 36, 0.8);
   backdrop-filter: blur(6px);
   font-family: var(--pf-font);
 }

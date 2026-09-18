@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300..900&family=Archivo:wght@400..700&display=swap");
 
 :root {
-  --bg: #0b0b0d;
+  --bg: #242424;
   --fg: #f4f3ef;
   --muted: #8a8891;
   --muted-2: #5a5860;
@@ -15,11 +15,11 @@
   --ease-quart-out: cubic-bezier(0.25, 1, 0.5, 1);
   --ease-expo-in-out: cubic-bezier(0.87, 0, 0.13, 1);
   --cursor-dot-size: 6px;
-  --cursor-ring-size: 40px;
-  --cursor-ring-hover-size: 56px;
-  --cursor-dot-color: var(--accent);
+  --cursor-ring-size: 32px;
+  --cursor-ring-hover-size: 44px;
+  --cursor-dot-color: var(--fg);
   --cursor-ring-color: var(--fg);
-  --cursor-hover-color: var(--accent);
+  --cursor-hover-color: var(--fg);
 }
 
 * {
@@ -92,6 +92,10 @@ a {
     transform 0.05s linear;
 }
 
+body:has(.cursor-ring.is-hover) .cursor-dot {
+  opacity: 0;
+}
+
 .cursor-ring {
   width: var(--cursor-ring-size);
   height: var(--cursor-ring-size);
@@ -113,14 +117,14 @@ a {
 .cursor-ring.is-hover {
   width: var(--cursor-ring-hover-size);
   height: var(--cursor-ring-hover-size);
-  background: var(--cursor-hover-color);
   border-color: var(--cursor-hover-color);
-  mix-blend-mode: normal;
 }
 
 .cursor-ring.has-label {
-  width: 84px;
-  height: 84px;
+  width: 72px;
+  height: 72px;
+  background: var(--cursor-hover-color);
+  border-color: var(--cursor-hover-color);
 }
 
 .cursor-label {
@@ -164,7 +168,7 @@ a {
 }
 
 .experiment input[type="text"] {
-  background: rgba(11, 11, 13, 0.7);
+  background: rgba(36, 36, 36, 0.7);
   border: 1px solid var(--border);
   color: var(--fg);
   padding: 0.5rem 0.75rem;

@@ -106,7 +106,7 @@ Events.on(render, "afterRender", () => {
   const ctx = render.context;
   ctx.save();
   ctx.font = `700 ${FONT_SIZE}px "Helvetica Neue", Arial, sans-serif`;
-  ctx.fillStyle = "#0b0b0d";
+  ctx.fillStyle = "#242424";
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
   for (const body of letterBodies) {

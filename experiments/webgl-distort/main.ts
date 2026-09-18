@@ -27,7 +27,7 @@ const ctx = textCanvas.getContext("2d")!;
 
 function drawText(text: string) {
   ctx.clearRect(0, 0, textCanvas.width, textCanvas.height);
-  ctx.fillStyle = "#0b0b0d";
+  ctx.fillStyle = "#242424";
   ctx.fillRect(0, 0, textCanvas.width, textCanvas.height);
   ctx.fillStyle = "#f4f3ef";
   ctx.textAlign = "center";

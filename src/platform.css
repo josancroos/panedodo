@@ -10,15 +10,18 @@
   --pf-font: "Archivo", system-ui, "Helvetica Neue", Arial, sans-serif;
 }
 
-body.pf-page {
+:root:not([data-theme="dark"]) body.pf-page {
   --pf-bg: #f6f4ee;
   --pf-fg: #16150f;
   --pf-muted: #6b6862;
   --pf-border: #ddd8cb;
 }
 
-body.pf-page .pf-nav {
-  background: rgba(246, 244, 238, 0.8);
+:root[data-theme="dark"] body.pf-page {
+  --pf-bg: #242424;
+  --pf-fg: #e8e8e6;
+  --pf-muted: #9a9a9a;
+  --pf-border: #3a3a3a;
 }
 
 .pf-nav {
@@ -32,7 +35,7 @@ body.pf-page .pf-nav {
   justify-content: space-between;
   padding: 1rem 1.5rem;
   border-bottom: 1px solid var(--pf-border);
-  background: rgba(36, 36, 36, 0.8);
+  background: color-mix(in srgb, var(--pf-bg) 82%, transparent);
   backdrop-filter: blur(6px);
   font-family: var(--pf-font);
 }
@@ -51,6 +54,42 @@ body.pf-page .pf-nav {
   line-height: 1;
   padding: 0.15rem;
   cursor: pointer;
+}
+
+.pf-theme-toggle {
+  position: relative;
+  background: transparent;
+  border: 1px solid var(--pf-border);
+  color: var(--pf-fg);
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.pf-theme-toggle:hover {
+  border-color: var(--pf-fg);
+}
+
+.pf-theme-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 16px;
+  height: 16px;
+  margin: -8px 0 0 -8px;
+  opacity: 0;
+  transform: scale(0.5) rotate(-90deg);
+  transition:
+    opacity 0.3s var(--ease-quart-out, ease),
+    transform 0.4s var(--ease-quart-out, ease);
+}
+
+:root:not([data-theme="dark"]) .pf-theme-icon-moon,
+:root[data-theme="dark"] .pf-theme-icon-sun {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
 }
 
 .pf-brand {
@@ -107,7 +146,7 @@ body.pf-page .pf-nav {
 }
 
 .pf-card:hover {
-  background: #ece8db;
+  background: color-mix(in srgb, var(--pf-fg) 8%, var(--pf-bg));
 }
 
 .pf-card .pf-index-num {

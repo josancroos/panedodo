@@ -1,4 +1,4 @@
-import { getOrderedExperiments } from "./experiments";
+import { getOrderedExperiments, saveExperimentOrder } from "./experiments";
 import { initCursor } from "./cursor";
 import "./platform.css";
 
@@ -50,15 +50,51 @@ export function renderNav(base: string, currentSlug?: string) {
   const sidebar = document.createElement("aside");
   sidebar.className = "pf-sidebar";
   sidebar.innerHTML = `
-    <a class="pf-sidebar-item${currentSlug ? "" : " is-current"}" href="${base}index.html">Home</a>
-    ${getOrderedExperiments()
-      .map(
-        (e) =>
-          `<a class="pf-sidebar-item${e.slug === currentSlug ? " is-current" : ""}" href="${base}experiments/${e.slug}/index.html">${e.title}</a>`
-      )
-      .join("")}
+    <div class="pf-sidebar-list">
+      <a class="pf-sidebar-item${currentSlug ? "" : " is-current"}" href="${base}index.html">Home</a>
+      ${getOrderedExperiments()
+        .map(
+          (e) =>
+            `<a class="pf-sidebar-item${e.slug === currentSlug ? " is-current" : ""}" href="${base}experiments/${e.slug}/index.html" data-slug="${e.slug}" draggable="true">${e.title}</a>`
+        )
+        .join("")}
+    </div>
+    <button type="button" class="pf-sidebar-save" id="pf-sidebar-save" hidden>Seite aktualisieren, um Änderungen zu sehen</button>
   `;
   document.body.appendChild(sidebar);
+
+  const sidebarList = sidebar.querySelector<HTMLElement>(".pf-sidebar-list")!;
+  const saveButton = sidebar.querySelector<HTMLButtonElement>(".pf-sidebar-save")!;
+
+  saveButton.addEventListener("click", () => {
+    window.location.reload();
+  });
+
+  let sidebarDragEl: HTMLElement | null = null;
+  sidebarList.querySelectorAll<HTMLElement>(".pf-sidebar-item[data-slug]").forEach((item) => {
+    item.addEventListener("dragstart", () => {
+      sidebarDragEl = item;
+      requestAnimationFrame(() => item.classList.add("is-dragging"));
+      sidebarList.classList.add("is-reordering");
+    });
+    item.addEventListener("dragend", () => {
+      item.classList.remove("is-dragging");
+      sidebarDragEl = null;
+      sidebarList.classList.remove("is-reordering");
+      const order = Array.from(sidebarList.querySelectorAll<HTMLElement>(".pf-sidebar-item[data-slug]")).map(
+        (el) => el.dataset.slug!
+      );
+      saveExperimentOrder(order);
+      saveButton.hidden = false;
+    });
+    item.addEventListener("dragover", (e) => {
+      e.preventDefault();
+      if (!sidebarDragEl || sidebarDragEl === item) return;
+      const rect = item.getBoundingClientRect();
+      const before = e.clientY < rect.top + rect.height / 2;
+      sidebarList.insertBefore(sidebarDragEl, before ? item : item.nextSibling);
+    });
+  });
 
   const toggle = nav.querySelector<HTMLButtonElement>(".pf-nav-toggle")!;
   function setOpen(open: boolean) {

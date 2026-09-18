@@ -21,6 +21,34 @@
   margin-bottom: 1.5rem;
 }
 
+.tf-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--pf-font);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--pf-bg);
+  background: var(--pf-fg);
+  text-decoration: none;
+  border-radius: 999px;
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+  transition: opacity 0.15s ease;
+}
+
+.tf-download svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+}
+
+.tf-download:hover {
+  opacity: 0.8;
+}
+
 /* ---- stage: full-bleed editable specimen ---- */
 
 .tf-stage {
@@ -29,6 +57,7 @@
   display: flex;
   align-items: center;
   padding: 2rem 1.5rem;
+  overflow: hidden;
   background: var(--tf-stage-bg, var(--pf-bg));
   color: var(--tf-stage-fg, var(--pf-fg));
   transition:

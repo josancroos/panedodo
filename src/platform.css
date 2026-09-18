@@ -282,7 +282,6 @@ body.pf-page {
   width: 240px;
   display: flex;
   flex-direction: column;
-  gap: 0.15rem;
   padding: 1.5rem 1.25rem;
   background: var(--pf-bg);
   border-right: 1px solid var(--pf-border);
@@ -295,6 +294,31 @@ body.pf-page {
   transform: translateX(0);
 }
 
+.pf-sidebar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.pf-sidebar-save {
+  margin-top: 1.25rem;
+  padding: 0.75rem;
+  border: 1px solid var(--pf-border);
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--pf-fg) 6%, var(--pf-surface, var(--pf-bg)));
+  font-family: var(--pf-font);
+  font-size: 0.72rem;
+  line-height: 1.4;
+  color: var(--pf-fg);
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.pf-sidebar-save:hover {
+  border-color: var(--pf-fg);
+}
+
 .pf-sidebar-item {
   font-family: var(--pf-font);
   font-size: 0.8rem;
@@ -302,7 +326,10 @@ body.pf-page {
   color: var(--pf-muted);
   padding: 0.4rem 0;
   border-bottom: 1px solid transparent;
-  transition: color 0.15s ease;
+  cursor: pointer;
+  transition:
+    color 0.15s ease,
+    opacity 0.15s ease;
 }
 
 .pf-sidebar-item:hover,
@@ -313,4 +340,21 @@ body.pf-page {
 .pf-sidebar-item.is-current {
   color: var(--pf-fg);
   font-weight: 600;
+}
+
+.pf-sidebar-item:active {
+  cursor: grabbing;
+}
+
+.pf-sidebar-item.is-dragging {
+  opacity: 0.4;
+  cursor: grabbing;
+}
+
+.pf-sidebar-list.is-reordering .pf-sidebar-item[data-slug]:not(.is-dragging) {
+  animation: pf-wiggle 0.22s ease-in-out infinite;
+}
+
+.pf-sidebar-list.is-reordering .pf-sidebar-item[data-slug]:nth-child(even):not(.is-dragging) {
+  animation-delay: -0.11s;
 }

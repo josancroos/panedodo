@@ -9,7 +9,9 @@
   --pf-muted: #7a7a7a;
   --pf-border: #1e1e1e;
   --pf-shadow: rgba(0, 0, 0, 0.14);
-  --pf-font: "Archivo", system-ui, "Helvetica Neue", Arial, sans-serif;
+  --pf-font:
+    -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, system-ui, "Helvetica Neue",
+    Arial, sans-serif;
 }
 
 :root:not([data-theme="dark"]) body.pf-page {
@@ -268,6 +270,9 @@
 
 body.pf-page {
   background: var(--pf-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
   --cursor-dot-color: var(--pf-fg);
   --cursor-ring-color: var(--pf-fg);
   --cursor-hover-color: var(--pf-fg);

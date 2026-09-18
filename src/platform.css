@@ -300,22 +300,42 @@ body.pf-page {
   gap: 0.15rem;
 }
 
+/* Only ever visible without [hidden] — the JS controls that attribute,
+   this rule must never give it a display outside :not([hidden]). */
+.pf-sidebar-save[hidden] {
+  display: none;
+}
+
+.pf-sidebar-save:not([hidden]) {
+  display: inline-flex;
+}
+
 .pf-sidebar-save {
+  align-self: flex-start;
   margin-top: 1.25rem;
-  padding: 0.75rem;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.7rem;
   border: 1px solid var(--pf-border);
-  border-radius: 8px;
-  background: color-mix(in srgb, var(--pf-fg) 6%, var(--pf-surface, var(--pf-bg)));
+  border-radius: 999px;
+  background: transparent;
   font-family: var(--pf-font);
-  font-size: 0.72rem;
-  line-height: 1.4;
-  color: var(--pf-fg);
-  text-align: left;
+  font-size: 0.68rem;
+  color: var(--pf-muted);
   cursor: pointer;
-  transition: border-color 0.15s ease;
+  transition:
+    color 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.pf-sidebar-save svg {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
 }
 
 .pf-sidebar-save:hover {
+  color: var(--pf-fg);
   border-color: var(--pf-fg);
 }
 

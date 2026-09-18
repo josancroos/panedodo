@@ -59,7 +59,10 @@ export function renderNav(base: string, currentSlug?: string) {
         )
         .join("")}
     </div>
-    <button type="button" class="pf-sidebar-save" id="pf-sidebar-save" hidden>Seite aktualisieren, um Änderungen zu sehen</button>
+    <button type="button" class="pf-sidebar-save" id="pf-sidebar-save" hidden>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 3v6h-6"/></svg>
+      Aktualisieren
+    </button>
   `;
   document.body.appendChild(sidebar);
 
